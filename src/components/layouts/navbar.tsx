@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function Navbar() {
     return (
-        <div className='flex justify-between items-center px-8 py-6'>
+        <div className='flex justify-between items-center px-8 h-[75px]'>
             <Image src="/logo.svg" alt="logo" width={100} height={100} />
 
             <div className='flex gap-4 items-center justify-center'>
