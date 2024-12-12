@@ -1,16 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// const protectedRoutes = ['/', '/profile']
-// const publicRoutes = ['/login']
-
 export default async function middleware(req: NextRequest) {
-    const path = req.nextUrl.pathname
-    console.log(path)
-    // const isProtectedRoute = protectedRoutes.includes(path)
-    // const isPublicRoute = publicRoutes.includes(path)
-
-    // console.log(isProtectedRoute, isPublicRoute)
-
     return NextResponse.next();
 }
 
