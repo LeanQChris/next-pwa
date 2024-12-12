@@ -7,6 +7,7 @@ import {
     logoutIcon,
 } from "@/components/icons/svg-icons";
 import Link from 'next/link';
+import { signOut } from 'next-auth/react';
 export default function ProfileMenues() {
     return (
         <div className='space-y-6'>
@@ -31,13 +32,13 @@ export default function ProfileMenues() {
                 </div>
                 {chevronRight}
             </Link>
-            <Link href="/contact-us" className="flex justify-between">
+            <div className="flex justify-between" onClick={() => signOut()}>
                 <div className="flex gap-4 items-center">
                     {logoutIcon}
                     <p>Logout</p>
                 </div>
                 {chevronRight}
-            </Link>
+            </div>
         </div>
     )
 }
