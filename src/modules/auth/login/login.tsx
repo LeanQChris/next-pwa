@@ -1,3 +1,4 @@
+"use client"
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { signIn } from 'next-auth/react';
@@ -19,8 +20,8 @@ export default function Login() {
 
     return (
         <form action={handleLogin}>
-            <Input placeholder="Username" />
-            <Input placeholder="Password" />
+            <Input placeholder="Username" name='email' defaultValue={"leanq.digital@gmail.com"} />
+            <Input placeholder="Password" name="password" defaultValue={"leanq@123"} />
             <p className='text-end'>Forgot Password?</p>
             <Button className='w-full bg-orange-500 text-white'>Login</Button>
         </form>

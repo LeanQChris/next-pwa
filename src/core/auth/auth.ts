@@ -31,11 +31,12 @@ const authOptions: AuthOptions = {
         })
     ],
     pages: {
-        signIn: '/auth/login',
+        signIn: '/login',
     },
     callbacks: {
         // Called when a user signs in
-        async signIn({ }) {
+        async signIn({ user }) {
+            console.log(user)
             return true;
         },
 
