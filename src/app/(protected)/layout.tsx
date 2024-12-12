@@ -1,20 +1,21 @@
-"use client"
-
+import { getSession } from "@/core/auth/auth";
+import { redirect } from "next/navigation";
 import React from "react";
-import {
-    QueryClientProvider
-} from '@tanstack/react-query'
-import { getQueryClient } from "@/lib/query-client";
 
 
-export default function TanstackQueryProvider({
+export default async function ProtectedRootLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    const queryClient = getQueryClient()
+    const session = await getSession();
+
+    if (session === null) {
+        return redirect("/login")
+    }
+
     return (
-        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+        <>{children}</>
     );
 }
 

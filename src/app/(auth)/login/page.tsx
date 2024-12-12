@@ -1,7 +1,13 @@
+import Login from '@/modules/auth/login/login'
 import React from 'react'
 
 export default function LoginPage() {
     return (
-        <div>LoginPage</div>
+        <div>
+            <p>Welcome Back</p>
+            <div>
+                <Login />
+            </div>
+        </div>
     )
 }
